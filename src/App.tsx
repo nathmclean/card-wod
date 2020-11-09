@@ -108,7 +108,10 @@ function App() {
         )}
       </main>
 
-      <footer className="flex justify-center">
+      {/*Pin the footer to the bottom*/}
+      <div className="flex-grow" />
+
+      <footer className="flex justify-center flex-shrink-0 p-4">
         <div className="text-gray-700">Copyright &#169; Nathan Mclean {year}</div>
       </footer>
     </div>
