@@ -53,7 +53,7 @@ resource "aws_cloudfront_distribution" "website" {
     content {
       error_code         = error_code.value
       response_code      = 200
-      response_page_path = "index.html"
+      response_page_path = "/index.html"
     }
   }
 
