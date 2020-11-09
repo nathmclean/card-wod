@@ -77,7 +77,7 @@ resource "aws_cloudfront_distribution" "website" {
   viewer_certificate {
     acm_certificate_arn      = aws_acm_certificate.cert.arn
     minimum_protocol_version = "TLSv1"
-    ssl_support_method       = "ni-only"
+    ssl_support_method       = "sni-only"
   }
 
   is_ipv6_enabled = true
