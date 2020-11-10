@@ -34,7 +34,7 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}
 
       - name: ls
-        run: lst
+        run: ls
       - name: yarn version
         run: yarn -v
       - name: yvm
