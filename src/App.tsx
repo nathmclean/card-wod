@@ -1,12 +1,8 @@
 import React, {useState} from 'react'
 import BuildWorkout from './components/BuildWorkout'
 import Workout from './components/Workout'
-import {ChosenExercises, Deck, Exercises, Suits, Workout as WorkoutType} from './data/types'
+import {Deck, Exercises, Suits, Workout as WorkoutType} from './data/types'
 import Logo from './components/Logo'
-import Heart from './components/Heart'
-import Spade from './components/Spade'
-import Diamond from './components/Diamond'
-import Club from './components/Club'
 
 function App() {
   const [workout, setWorkout] = useState<WorkoutType>({

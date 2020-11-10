@@ -6,10 +6,6 @@ interface CardProps {
   card?: CardType
 }
 
-const defaultProps: CardProps = {
-  back: false
-}
-
 const Card: React.FC<CardProps> = ({back, card}) => {
   const symbol = () => {
     switch (card?.suit) {

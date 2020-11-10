@@ -53,9 +53,9 @@ const ExerciseSelect: FunctionComponent<ExerciseSelectProps> = ({suit, exercises
   const buildOptions = (categories: ExerciseCategory[]): option[] => {
     let options: option[] = [{key: 'Select', disabled: true, value: '', display: 'Select'}]
 
-    categories.map((category) => {
+    categories.forEach((category) => {
       options.push({key: category.name, disabled: true, value: category.name, display: category.name})
-      category.exerciseNames.map((name) => {
+      category.exerciseNames.forEach((name) => {
         options.push({key: name, disabled: false, value: name, display: name})
       })
     })

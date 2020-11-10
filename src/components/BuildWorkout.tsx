@@ -1,9 +1,9 @@
 import React from 'react'
 import ExerciseSelect from './ExerciseSelect'
-import {ChosenExercises, Deck, Exercises, Workout} from '../data/types'
+import {ChosenExercises, Exercises} from '../data/types'
 import {Suits} from '../data/types'
 
-type BuildWorkout = {
+type BuildWorkoutProps = {
   exercises: Exercises
   chosen: ChosenExercises
   updateChosenExercise: (suit: Suits, exercise: string) => void
@@ -11,7 +11,7 @@ type BuildWorkout = {
   workoutValid: () => boolean
 }
 
-const BuildWorkout: React.FC<BuildWorkout> = ({exercises, chosen, updateChosenExercise, startWorkout, workoutValid}) => {
+const BuildWorkout: React.FC<BuildWorkoutProps> = ({exercises, chosen, updateChosenExercise, startWorkout, workoutValid}) => {
   return (
     <div className="mt-8 bg-gray-200 shadow-lg w-full sm:w-3/4 rounded-2xl p-2 text-gray-700">
       <h3 className="text-2xl text-center my-4">Build your workout</h3>
