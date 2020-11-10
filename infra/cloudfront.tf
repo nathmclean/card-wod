@@ -35,7 +35,7 @@ resource "aws_cloudfront_distribution" "website" {
     }
 
     target_origin_id       = "S3-${aws_s3_bucket.website.id}"
-    viewer_protocol_policy = "https-only"
+    viewer_protocol_policy = "redirect-to-https"
     default_ttl            = 86400
     max_ttl                = 31536000
     smooth_streaming       = false
