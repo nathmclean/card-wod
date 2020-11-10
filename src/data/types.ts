@@ -9,7 +9,7 @@ export class Deck {
   drawn: Card[]
 
   constructor() {
-    this.toDraw = allCards
+    this.toDraw = [...allCards]
     this.drawn = []
   }
 

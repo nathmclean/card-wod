@@ -75,8 +75,18 @@ function App() {
   }
 
   const reset = () => {
-    workout.deck.reset()
-    setWorkout({...workout, inProgress: false, exercises: {Hearts: '', Clubs: '', Diamonds: '', Spades: ''}})
+    const newWorkout = {
+      exercises: {
+        Hearts: '',
+        Spades: '',
+        Diamonds: '',
+        Clubs: ''
+      },
+      deck: new Deck(),
+      inProgress: false
+    }
+    console.log(newWorkout)
+    setWorkout(newWorkout)
   }
 
   const year = new Date().getFullYear()
