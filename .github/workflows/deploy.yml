@@ -21,9 +21,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - run: yvmrc=$(cat .yvmrc)
-
       - name: Read .nvmrc
         run: echo ::set-output name=NVMRC::$(cat .nvmrc)
         id: nvm
@@ -45,7 +42,7 @@ jobs:
 
       # Now turn create the invalidation
       - name: create cloudfront invalidation
-        run: create-invalidation --distribution-id E114JBGFEDM6H6 --paths "*"
+        run: aws cloudfront create-invalidation --distribution-id E114JBGFEDM6H6 --paths "*"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
