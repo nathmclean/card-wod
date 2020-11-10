@@ -37,8 +37,5 @@ jobs:
         run: ls
       - name: yarn version
         run: yarn -v
-      - name: yvm
-        run: which yvm
-      # Runs a single command using the runners shell
       - name: build
         run: yarn build
