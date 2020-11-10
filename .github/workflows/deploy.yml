@@ -36,3 +36,16 @@ jobs:
         run: yarn
       - name: build
         run: yarn build
+
+      - name: sync to S3
+        run: aws s3 sync build s3://card-wod.com --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      # Now turn create the invalidation
+      - name: create cloudfront invalidation
+        run: create-invalidation --distribution-id E114JBGFEDM6H6 --paths "*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
