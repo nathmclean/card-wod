@@ -118,7 +118,12 @@ function App() {
       <div className="flex-grow" />
 
       <footer className="flex justify-center flex-shrink-0 p-4">
-        <div className="text-gray-700">Copyright &#169; Nathan Mclean {year}</div>
+        <div className="text-gray-700">
+          Copyright &#169; Nathan Mclean {year} -{' '}
+          <a className="hover:underline" href="https://github.com/nathmclean/card-wod">
+            find the source code on GitHub
+          </a>{' '}
+        </div>
       </footer>
     </div>
   )
